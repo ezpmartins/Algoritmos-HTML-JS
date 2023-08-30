@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Coloque o nome da rua/avenida/vila de onde mora:
+
+    <input type="text" id="rua_user">
+
+<button onclick="ondeeumoro()"> Onde eu moro </button>
+<br>
+    Coloque o número da sua casa:
+
+    <input type="number"id = "numero_user">
+
+    
+    <button onclick="qualonumero()"> Qual o número do longradouro </button>
+
+</body>
+<script>
+    function ondeeumoro(){
+        alert( 'Seu Longradouro é  ' + rua_user.value)
+    }
+    function qualonumero(){
+        alert( "O número do seu logradouro é  " + Number(numero_user.value))
+    }
+    
+
+
+    
+</script>
+</html>

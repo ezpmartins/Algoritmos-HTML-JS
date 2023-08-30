@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor da passagem do ônibus:
+    <input type="number" id="input_pass_onibus"><br>
+    Insira a quantidade de viagens que faz por mês:
+    <input type="number" id="input_viagens"><br>
+    Distancia do Trabalho até sua casa (Km):
+    <input type="number" id="input_distancia"><br>
+    <button onclick="vervt()"> Calcular VT</button>
+    <div id="div_vt"></div>
+</body>
+</html>
+<script>
+function vervt(){
+    var viagensdeonibus =  ( Number (input_pass_onibus.value) * 0.9)  * Number (input_viagens.value)
+    var viagensapp =  ((Number(input_viagens.value) *0.1) * Number (input_distancia.value)) *0.75
+    var resultado = viagensdeonibus+viagensapp
+
+    div_vt.innerHTML=
+    `
+    Você vai gastar R$ ${resultado} por mês com transporte.
+    `
+}
+
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantas Latinhas toma por dia:
+    <input type="text" id="input_latinhas">
+    <button onclick="qtdRefri()"> Quantos Refris ?</button>
+    <div id="div_mostrar_refri"></div>
+</body>
+
+</html>
+<script>
+    function qtdRefri() {
+        var refripordia = Number(input_latinhas.value) * 365
+
+        div_mostrar_refri.innerHTML =
+            ` A quantidade de latinhas que você consome por ano é ${refripordia}`
+
+        if (refripordia >= 500) {
+            div_mostrar_refri.innerHTML =
+                ` A quantidade de latinhas que você consome por ano é ${refripordia} <br>
+ Cuidado com o Diabete`
+        }
+    }
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o Ki Base (força base) do Guerreiro Saiyajin:
+    <input type="text" id="input_ki_base">
+    <br>
+    Transformar em...
+    <br>
+    <button onclick ="ssj1()"> SSJ1</button>
+    <button onclick="ssj2()"> SSJ2</button>
+    <button onclick="ssj3()">SSJ3</button>
+    <div id="div_saiyjin"></div>
+</body>
+</html>
+<script>
+
+function ssj1(){
+    var Ki =  Number(input_ki_base.value)
+    var s1 = Ki*50
+
+div_saiyjin.innerHTML=
+`Após se transformar em <u> SSJ1 </u>, o ki desse Sayajin passa a ser de <u> ${s1} </u>.`
+}
+
+ function ssj2(){
+var Ki = Number(input_ki_base.value)
+var s2= Ki*100
+div_saiyjin.innerHTML =
+`Após se transformar em <u> SSJ2</u>, o ki desse Sayajin passa a ser de <u>${s2}</u>.`
+ }
+function ssj3(){
+var Ki = Number (input_ki_base.value)
+var s3 = Ki*200
+div_saiyjin.innerHTML =
+`Após se transformar em <u> SSJ3</u>, o ki desse Sayajin passa a ser de <u>${s3}</u>.`
+
+}
+
+
+
+
+
+</script>

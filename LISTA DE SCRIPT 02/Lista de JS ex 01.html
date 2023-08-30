@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Insira quantas hora você dorme:
+    <input type="number" id="input_sono">
+    <button onclick="horasdormidas()"> Horas Dormidas!</button>
+    <div id="div_sono"></div>
+</body>
+
+</html>
+<script>
+
+    function horasdormidas() {
+        var sono =  Number(input_sono.value)
+        var fase1 = sono * 0.05
+        var fase2 = sono * 0.45
+        var fase3 = sono * 0.3
+        var rem = sono * 0.2
+        div_sono.innerHTML = `
+    Ao dormir <u>${sono}</u> vc dormiu:<br>
+    <u>${fase1},</u> na fase 1<br>
+    <u>${fase2}</u> <b>na fase 2</b> <br>
+    <u>${fase3}</u> <b>na fase 3</b> <br>
+    <u>${rem}</u> na <b>fase REM</b>
+    
+    
+    `
+
+
+
+
+    }
+
+
+
+
+
+
+</script>

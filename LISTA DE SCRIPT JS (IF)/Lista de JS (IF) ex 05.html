@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informar a quantidade de KWh consumida por mês:
+    <input type="text" id="input_kwh_month"><br>
+    <button onclick="calcularconta()">Calcular Conta Mês</button><br>
+
+</body>
+
+</html>
+<script>
+    function calcularconta() {
+        var kwh = Number(input_kwh_month.value);
+        var kwhValor = kwh * 0.85;
+        var desconto = kwhValor - (kwhValor * 0.1);
+
+        if (kwh < 100) {alert(`O valor da conta a ser pago é de ${desconto}`)}
+
+        
+
+        if (kwh >= 100) {alert(`O valor da conta a ser pago é de ${kwhValor}`) }
+        
+
+    }
+
+</script>

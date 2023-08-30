@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Equipe Lantra vai pedir umas pizzas !</h1>
+<br>
+<br>
+<img src="https://t3.ftcdn.net/jpg/05/94/69/86/240_F_594698627_d3ML2tITJZtqnF4F4jYEPRCOuDwkQ1Pv.jpg" alt="">
+
+
+    <br>
+    <br>
+    
+    Valor da pizza:
+    <input type="number" id="valor_pizza">
+    <br>
+    <br>
+    Quantidade de amigos:
+    <input type="number" id="qntd_amigos">
+    <br>
+    <br>
+    <button onclick="amopizza()"> #lovePizza </button>
+    
+</body>
+<script>
+function amopizza()
+{ var amoPizza = valor_pizza.value
+var amigos = qntd_amigos.value
+var resultado = (amoPizza/amigos)
+
+alert(`Cada um dos ${qntd_amigos.value} amigos vai pagar R$ ${resultado}.`)
+
+}
+</script>
+</html>
