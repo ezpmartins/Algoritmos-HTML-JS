@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- (ENTREGAR) 6. Crie um programa o qual: 
+a) Solicita a temperatura do ambiente 
+b) Ao clicar em "Verificar clima", determine se o clima está: 
+    Apropriada p/ conservar alimento - Caso a temperatura for menor que 10 
+    Inapropriada p/ conservar alimento - Caso a temperatura for a partir de 10 
+c) Em caso de temperatura apropriada, exiba a figura de um alimento em bom estado. Caso contrário, exiba a imagem de um alimento estragado-->
+
+    Informe a Temperatura do Ambiente (C°):
+    <input id="input_temperatura"><br>
+
+    <button onclick="verificarClima()"> Verificar Clima </button><br>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+    function verificarClima() {
+        var temperatura = Number(input_temperatura.value);
+
+        if (temperatura < 10) {
+            div_mensagem.innerHTML = `A temperatura está Apropriada p/ conservar alimento <br>
+    <img src="https://assets.folhavitoria.com.br/images/acdd88d0-3e69-0136-6560-6231c35b6685--minified.jpg"
+    width= "500px";
+    height="500px";>
+    `
+        }
+        else {
+            div_mensagem.innerHTML =
+            ` A temperatura está Inapropriada p/ conservar alimento <br>
+    <img src="https://static.tuasaude.com/media/article/ed/zg/como-identificar-alimentos-estragados_22594_l.jpg"
+    width= "500px";
+    height="500px";> `
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+</script>

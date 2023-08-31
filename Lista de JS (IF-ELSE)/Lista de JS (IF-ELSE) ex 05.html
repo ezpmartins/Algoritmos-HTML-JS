@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 5. Crie um programa o qual: 
+a) Solicite 2 notas de um aluno 
+b) Ao clicar em "Verificar situação", calcule sua média e... 
+c) Caso a média seja a partir de 6, exiba "Parabéns, aprovado!" 
+d) Caso a média seja menor que 6, exiba "Tente outra vez..."  -->
+
+    Informe a Primeira nota:
+    <input id="input_n1"> <br>
+    Informe a Segunda nota:
+    <input id="input_n2"><br>
+    <button onclick="calcularMédia()"> Verificar Situação</button><br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function calcularMédia() {
+        var primeiraNota = Number(input_n1.value);
+        var segundaNota = Number(input_n2.value);
+        var media = (primeiraNota + segundaNota) / 2;
+
+        if (media >= 6) {
+            div_mensagem.innerHTML =
+                `Parabéns,aprovado !`
+        }
+        else {
+            div_mensagem.innerHTML =
+            ` Tente outra vez...`
+        }
+    }
+</script>

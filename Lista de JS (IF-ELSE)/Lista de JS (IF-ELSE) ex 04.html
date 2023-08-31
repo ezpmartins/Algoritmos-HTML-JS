@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<!-- (ENTREGAR): 4. Crie um programa o qual: 
+a) Solicita a frequência do aluno 
+b) Ao clicar em "Analisar frequência", deve aparecer, abaixo dele: 
+    A imagem de um turista, caso a frequência for menor que 50 OU 
+    A imagem de um aluno estudioso, caso a frequência for a partir de 50  -->
+
+Informe sua frequência:
+<input id="input_frequencia"><br>
+<button onclick="analisar_frequencia()"> Analisar frequência </button><br>
+<div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+function analisar_frequencia(){
+var frequência = Number(input_frequencia.value)
+if(frequência<50){
+    div_mensagem.innerHTML = 
+    `<img src="https://e7.pngegg.com/pngimages/306/1010/png-clipart-tourist-tourism-graphy-backpack-korean-student-television-microphone.png" width= "500px";
+     height"500px;">`  
+}
+else{
+    div_mensagem.innerHTML = 
+    `<img src="https://w7.pngwing.com/pngs/526/795/png-transparent-man-touching-white-computer-keyboard-nerd-geek-machine-learning-computer-nerd-miscellaneous-game-child.png"
+    width = "500px";
+    height ="500px";>` 
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+</script>
