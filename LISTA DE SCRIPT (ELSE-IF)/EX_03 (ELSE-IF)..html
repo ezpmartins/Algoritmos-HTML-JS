@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 3. Para o ser humano, a temperatura é... 
+
+Congelante (até menos de 14ºC) 
+
+Com Frio (entre 14ºC e 21ºC) 
+
+Confortável (mais de 21ºC até 24ºC) 
+
+Com Calor (mais de 24ºC até 31ºC) 
+
+Calor escaldante (mais de 31ºC) 
+
+Crie um programa que, ao ler uma temperatura, exiba uma dessas situações de temperatura.  -->
+<body>
+     Informe a temperatura (C°):
+     <input id="input_temperatura"><br>
+     <button onclick="lerTemperatura()">Ler Temperatura</button><br>
+     <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+
+    function lerTemperatura(){
+        var temperatura = input_temperatura.value;
+
+    if(temperatura<14){
+        div_mensagem.innerHTML=
+        `Para o ser humano, a temperatura é Congelante`
+    }
+    else if(temperatura<=21){
+        div_mensagem.innerHTML=
+        `Para o ser humano, a temperatura é Com Frio`
+
+    }
+    else if (temperatura<=24){
+        div_mensagem.innerHTML=
+        `Para o ser humano, a temperatura é Confortavél`
+    }
+    else if (temperatura<=31){
+        div_mensagem.innerHTML=
+        `Para o ser humano, a temperatura é Com calor `
+    }
+    else{
+        div_mensagem.innerHTML=
+        `Para o ser humano, a temperatura é Escaldante`
+    }
+
+    }
+    
+
+
+
+
+</script>

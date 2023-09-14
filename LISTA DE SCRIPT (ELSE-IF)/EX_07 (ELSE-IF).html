@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 7. Crie um programa o qual: 
+
+    a) Solicite o valor que o usuário tem economizado 
+
+    b) Ao clicar em "Poder de compra", exibir uma ou várias frases abaixo do dele, conforme estas regras: 
+
+    b.1) Caso o valor economizado seja igual ou menor que 0: Exibir SOMENTE a frase Nada de compras triste 
+
+    b.2) Caso o valor economizado for maior que 0 e até 100: Exibir Viajem de ida e volta pra Praia Grande 
+
+    b.3) Caso o valor economizado seja maior que 100 e menor que 4000: Exibir abaixo da frase de b.2): Uma boa moto usada 
+
+    b.4) Caso o valor economizado é a partir de 4000: Exibir abaixo da frase de b.3): Mais alguma bobagem legal  -->
+
+<body>
+
+    Informe o quanto você tem economizado (R$):
+    <input id="input_valor_economizado"><br>
+    <button onclick="poderDeCompra()"> Poder de Compra</button><br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function poderDeCompra() {
+        var dinheiro = input_valor_economizado.value;
+
+        if (dinheiro <= 0) {
+            div_mensagem.innerHTML =
+                `Nada de Compras 😢`
+        }
+        else if (dinheiro <= 100) {
+            div_mensagem.innerHTML =
+                `Viajem de ida e volta para Praia`
+        }
+        else if (dinheiro <= 3999) {
+            div_mensagem.innerHTML =
+
+                `Viajem de ida e volta para Praia<br>
+        <img src="https://motos2023.com.br/wp-content/uploads/2022/12/2016-08-11-honda-cg-125-i-fan-2016-719ac26289.webp" alt="300px">`
+        }
+        else {
+            div_mensagem.innerHTML =
+                `Viajem de ida e volta para Praia <br>
+        <img src="https://motos2023.com.br/wp-content/uploads/2022/12/2016-08-11-honda-cg-125-i-fan-2016-719ac26289.webp" alt="50px"<br>
+        <img src="https://capitalsocial.cnt.br/wp-content/uploads/2018/02/capa-ferias-coletivas.png" alt="300px">`
+        }
+    }
+</script>
