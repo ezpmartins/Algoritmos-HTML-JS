@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite sua idade:
+    <input id="input_idade"><br>
+    Digite seu salário:
+    <input id="input_salario"><br>
+    <button onclick="analisarSituacao()"> Analisar Situação</button><br>
+    <span id="span_resultado"></span>
+</body>
+
+</html>
+<script>
+    function analisarSituacao() {
+        var idade = Number(input_idade.value);
+        var salario = Number(input_salario.value);
+
+        if (idade < 18 && salario < 2500) {
+            span_resultado.innerHTML =
+                `Menor de idade e liso`
+        }
+        else if (idade < 18 && salario >= 2500) {
+            span_resultado.innerHTML =
+                `Menor de idade e ostentação`
+        }
+        else if (idade >= 18 && salario < 3500) {
+            span_resultado.innerHTML =
+                `Maior de idade e liso`
+        }
+        else if (idade >= 18 && salario >= 3500 && salario <= 7000) {
+            span_resultado.innerHTML =
+                `Maior de idade e ostentação`
+        }
+        else {
+            span_resultado.innerHTML =
+                ` Maior de idade e mega ostentação`
+        }
+    }
+</script>
