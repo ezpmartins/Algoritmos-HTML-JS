@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Modelo de Pagamento:
+    <input id="input_mtdpagamento"><br>
+    <button onclick="analisarCompra()">Analisar Comprar</button><br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+<script>
+    function analisarCompra() {
+        var modeloPagamento = input_mtdpagamento.value;
+
+        if (modeloPagamento == 'Dinheiro' || modeloPagamento == 'Cartão de Débito') {
+            div_resultado.innerHTML =
+                `Você terá que pagar a vista`
+        }
+        else {
+            div_resultado.innerHTML =
+                `Pagamento pode ser parcelado`
+        }
+
+    }
+</script>

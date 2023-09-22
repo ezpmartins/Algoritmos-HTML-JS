@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Calculadora de cansaço aprimorada do aluno SPTech
+    </h1>
+
+    Meio de transporte:
+    <input id="input_meio_transporte"><br><br>
+    Distância da Faculdade (KM):
+    <input id="input_distancia"><br><br>
+    <button onclick="calcularCansaco()"> Calcular Cansaço </button>
+</body>
+
+</html>
+<script>
+    function calcularCansaco() {
+        var meioDeTransporte = input_meio_transporte.value;
+        var distancia = Number(input_distancia.value);
+
+        if (distancia <= 10) {
+            if (meioDeTransporte == 'Carro' || meioDeTransporte == 'Metrô' || meioDeTransporte == 'Ônibus') {
+                alert(`Tá Tranks...`)
+            }
+            else {
+                alert(`É um pouco cansado...`)
+            }
+        }
+
+        else if (meioDeTransporte == 'Carro') {
+            alert(`É um pouco cansado...`)
+        }
+        else if (meioDeTransporte == 'Metrô' || meioDeTransporte == 'Ônibus') {
+            alert(`Bem cansado...`)
+        }
+        else if (meioDeTransporte == 'Bicicleta') {
+            alert(`Vish... tá só o pó...`)
+        }
+
+    }
+</script>
