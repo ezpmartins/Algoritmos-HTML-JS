@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .mensagem {
+        color: blue
+    }
+</style>
+
+<body>
+    <div class="mensagem">
+        Total guardado no cofrinho: R$<u id="u_totalguardado">0</u> <br>
+        Depósitos efetuados:<u id="u_depositosEfetuados">0</u> <br>
+        Retiradas efetuadas:<u id="u_retiradasEfetuadas">0</u><br>
+    </div><br>
+    <button onclick="adicionar50cents()">Depositar R$0.50</button><br>
+    <button onclick="adicionar2Reais()"> Depositar R$ 2.00</button><br>
+    <button onclick="retirar50cents()"> Retirar R$0.50</button><br>
+    Valor:
+    <input id="input_valor">
+    <button onclick="retirarValor()">Retirar</button>
+
+
+</body>
+
+</html>
+<script>
+    var dinheiro = 0;
+    var depositos = 0;
+    var retiradas = 0;
+
+    function adicionar50cents() {
+        dinheiro += 0.50;
+        depositos += 1
+        u_totalguardado.innerHTML =
+            dinheiro;
+        u_depositosEfetuados.innerHTML =
+            depositos;
+    }
+    function adicionar2Reais() {
+        dinheiro += 2.00;
+        depositos += 1
+        u_totalguardado.innerHTML =
+            dinheiro;
+        u_depositosEfetuados.innerHTML =
+            depositos;
+
+    }
+    function retirar50cents() {
+        dinheiro -= 0.50;
+        retiradas += 1
+        u_totalguardado.innerHTML =
+            dinheiro;
+        u_retiradasEfetuadas.innerHTML =
+            retiradas;
+    }
+    function retirarValor() {
+        var valorDisponivel = Number(input_valor.value);
+        dinheiro -= valorDisponivel
+        u_totalguardado.innerHTML =
+            dinheiro;
+    }
+
+</script>

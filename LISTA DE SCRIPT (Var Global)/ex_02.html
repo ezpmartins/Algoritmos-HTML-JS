@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informe o sálario R$:
+    <input type="number" id="input_salario_user"><br>
+    <button onclick="confirmarSalario()">Confirmar Salário</button><br>
+    <button onclick="reduzirGrana100()"> Pagar conta de R$100 </button><br>
+    <button onclick="reduzirGrana500()"> Pagar conta de R$ 500</button><br>
+    <button onclick="adicionarGrana2000()"> Ganhar na loteria R$ 2000</button><br>
+    <div id="div_resposta"></div>
+
+</body>
+
+</html>
+<script>
+    var granaAtual = 0;
+
+    function confirmarSalario() {
+        granaAtual = Number(input_salario_user.value);
+        div_resposta.innerHTML =
+            `Grana atual: R$${granaAtual}`
+    }
+    function reduzirGrana100() {
+        granaAtual -= 100
+        div_resposta.innerHTML =
+            `Grana atual: R$${granaAtual}`
+    }
+    function reduzirGrana500() {
+        granaAtual -= 500
+        div_resposta.innerHTML =
+            `Grana atual: R$${granaAtual}`
+    }
+    function adicionarGrana2000() {
+        granaAtual += 2000
+        div_resposta.innerHTML =
+            `Grana atual: R$${granaAtual}`
+    }
+
+</script>

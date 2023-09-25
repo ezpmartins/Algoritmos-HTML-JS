@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #imagem {
+        width: 100px;
+        height: 100px;
+        margin-left: 10px;
+    }
+</style>
+
+<body>
+    <button onclick="moverEsquerda()">Mover p/Esquerda</button>
+    <button onclick="moverDireita()"> Mover p/ Direita</button><br><br>
+    <input type="text" id="input_qtdPixels"><br><br>
+
+    <img id="imagem_bart"
+        src="https://w7.pngwing.com/pngs/779/2/png-transparent-bart-simpson-lisa-simpson-skateboarding-leaving-photography-cartoon-vehicle.png">
+</body>
+
+</html>
+<script>
+    var marginLeft = 0;
+
+    function moverEsquerda() {
+        var pixels = Number(input_qtdPixels.value);
+        marginLeft -= pixels;
+        imagem_bart.style.marginLeft = `${marginLeft}px`
+
+    }
+    function moverDireita() {
+        var pixels = Number(input_qtdPixels.value);
+        marginLeft += pixels;
+        imagem_bart.style.marginLeft = `${marginLeft}px`
+
+    }
+
+</script>

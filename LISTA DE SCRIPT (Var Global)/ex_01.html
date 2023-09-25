@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div_imagem">
+        <img id="id_imagem"
+            src="https://seeklogo.com/images/C/Corinthians_Bras_and__227_o-logo-E92E44B595-seeklogo.com.png">
+    </div><br>
+    <button onclick="aumentarWidth()">Aumentar Largura</button><br>
+    <button onclick="dimininuirWidth()">Diminuir Largura</button><br>
+</body>
+
+</html>
+<script>
+    var imagemAltura = 500;
+
+    function aumentarWidth() {
+
+        imagemAltura += 10;
+
+        div_imagem.innerHTML =
+            `<img id="id_imagem" src="https://seeklogo.com/images/C/Corinthians_Bras_and__227_o-logo-E92E44B595-seeklogo.com.png" 
+         width="${imagemAltura}">
+         `;
+
+
+    }
+    function dimininuirWidth() {
+
+        imagemAltura -= 10;
+
+        div_imagem.innerHTML = `<img id="id_imagem" src="https://seeklogo.com/images/C/Corinthians_Bras_and__227_o-logo-E92E44B595-seeklogo.com.png"
+        width="${imagemAltura}">
+         `;
+    }
+
+</script>
