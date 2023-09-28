@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Operações com Textos</h1>
+    Digite uma frase:
+    <input id="input_frase" />
+    <button onclick="analisarTextos()">Analisar</button>
+    <br />
+
+    Quantidade de caracteres:
+    <!-- length significa comprimento de um  texto-->
+    <b>
+      <span id="span_qtd_letras"></span>
+    </b>
+    <br />
+
+    Começa com "a"?
+    <!-- startsWith significa com qual letra o texto começa com uma determinada letra ('x') -->
+    <b>
+      <span id="span_comeca_a"></span>
+    </b>
+    <br />
+
+    Começa com "e"?
+     <!-- startsWith significa com qual letra o texto começa com uma determinada letra ('x') -->
+    <b>
+      <span id="span_comeca_e"></span>
+    </b>
+    <br />
+
+    Termina com ".com"?
+    <!-- endsWith signica com qual letra o texto termina com uma determinada letra ('x') -->
+    <b>
+      <span id="span_termina_com"></span>
+    </b>
+    <br />
+
+    Termina com "e"?
+    <!-- endsWith signica com qual letra o texto termina com uma determinada letra ('x') -->
+    <b>
+      <span id="span_termina_e"></span>
+    </b>
+    <br />
+
+    Termina com "@"?
+    <!-- endsWith signica com qual letra o texto termina com uma determinada letra ('x') -->
+    <b>
+      <span id="span_termina_arroba"></span>
+    </b>
+    <br />
+
+    Primeira letra da frase:
+    <!-- variavel[] sempre começara com 0 e sempre será a posição exata será menos (-1)-->
+    <b>
+      <span id="span_primeira_letra"></span>
+    </b>
+    <br />
+
+    Terceira letra da frase:
+    <!-- variavel[] sempre começara com 0 e sempre será a posição  exata será menos (-1)-->
+    <b>
+      <span id="span_terceira_letra"></span>
+    </b>
+    <br />
+
+    Última letra da frase:
+    <!-- variavel[] sempre começara com 0 e sempre será a posição  exata será menos (-1)-->
+    <b>
+      <span id="span_ultima_letra"></span>
+    </b>
+    <br />
+
+    Onde está o primeiro @?
+    <!-- variavel.indexOf ('x') -->
+    <b>
+      <span id="span_primeira_arroba"> </span>
+    </b>
+    <br />
+
+    Índice de "abc":
+    <!-- variavel.indexOf ('x') -->
+    <b>
+      <span id="span_indice_abc"></span>
+    </b>
+    <br />
+
+    Como fica em maiúsculo (CAIXA ALTA):
+    <!-- variavel.toUpperCase() para deixar todo texto em capslock -->
+    <b>
+      <span id="span_maiusculo"></span>
+    </b>
+    <br />
+
+    Como fica em minúsculo (caixa baixa):
+    <!--variavel.toLowerCase() para deixar todo texto em minusculo   -->
+    <b>
+      <span id="span_minusculo"></span>
+    </b>
+    <br />
+
+    Frase original:
+    <!-- propria variavel da input -->
+    <b>
+      <span id="span_frase_original"></span>
+    </b>
+    <br />
+
+    Frase com @ no primeiro 'a':
+    <!-- replace() para substiuir os caracteres -->
+    <b>
+      <span id="span_arroba_no_a"></span>
+    </b>
+    <br />
+
+    Frase sem espaços:
+    <!-- replace() para substiuir os caracteres -->
+    <b>
+      <span id="span_sem_espacos"></span>
+    </b>
+    <br />
+
+    Frase com 4, 5 e 3:
+    <!-- replaceAll() para substiuir os caracteres -->
+    <b>
+      <span id="span_numeros"></span>
+    </b>
+  </body>
+</html>
+
+<script>
+  function analisarTextos() {
+
+    var frase = input_frase.value;
+
+    span_qtd_letras.innerHTML = frase.length;
+    
+    if(frase.startsWith('a') == true){
+      span_comeca_a.innerHTML = 'Sim';
+    }
+    else{span_comeca_a.innerHTML = 'Não';
+    }
+    
+    if(frase.startsWith('e') == true){
+      span_comeca_e.innerHTML = 'Sim';
+    }
+    else{span_comeca_e.innerHTML = 'Não';
+    }
+    if (frase.endsWith ('.com')== true){
+      span_termina_com.innerHTML ='Sim';
+    }
+    else{
+      span_termina_com.innerHTML = 'Não';
+    }
+    if (frase.endsWith ('e')== true){
+      span_termina_e.innerHTML ='Sim';
+    }
+    else{
+      span_termina_e.innerHTML = 'Não';
+    }
+    if (frase.endsWith ('@')== true){
+      span_termina_arroba.innerHTML ='Sim';
+    }
+    else{
+      span_termina_arroba.innerHTML = 'Não';
+    }
+    
+    span_primeira_letra.innerHTML = frase[0];
+    span_terceira_letra.innerHTML = frase[2];
+    span_ultima_letra.innerHTML = frase[frase.length -1];
+
+    span_primeira_arroba.innerHTML = frase.indexOf('@');
+    span_indice_abc.innerHTML = frase.indexOf ('abc');
+
+    span_maiusculo.innerHTML = frase.toUpperCase();
+    span_minusculo.innerHTML = frase.toLowerCase();
+
+    span_frase_original.innerHTML = frase;
+
+    span_arroba_no_a.innerHTML = frase.replace('a','@');
+
+
+    span_sem_espacos.innerHTML = frase.replaceAll(' ','');
+
+    span_numeros.innerHTML = frase.replace('a','4').replaceAll('s','5').replaceAll('e','3')
+
+  }
+</script>
