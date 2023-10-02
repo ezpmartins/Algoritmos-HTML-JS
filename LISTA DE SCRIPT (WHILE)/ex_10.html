@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe uma crescente de valores númericos: 
+    <input type="number" id="input_crescente_valor_numerico"><br>
+    <button onclick="mostrarPares()">S2 Pares</button><br>
+    <span id="span_resultado"></span>
+</body>
+</html>
+<script>
+    function mostrarPares(){
+        var crescenteValorNumerico = Number(input_crescente_valor_numerico.value);
+        var repeticao = 0;
+        span_resultado.innerHTML='';
+
+        while(repeticao<crescenteValorNumerico){
+            repeticao+= 2;
+            span_resultado.innerHTML += `<br> ${repeticao}<br>`
+        }
+    }
+</script>

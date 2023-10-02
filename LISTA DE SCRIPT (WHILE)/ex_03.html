@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="falaSobreAlgoritmos()">Falar sobre Algoritmos</button>
+    <span id="span_mensagem"></span>
+</body>
+</html>
+<script>
+    function falaSobreAlgoritmos(){
+        var frase = span_mensagem.value;
+        var repetição = 0;
+        var numero = 0;
+        span_mensagem.innerHTML = '';
+
+        while(repetição<7){
+            repetição+=1;
+            numero+=1;
+            span_mensagem.innerHTML += 
+            `<br>${numero} Boa tarde !  <br>`
+        }
+    }
+</script>

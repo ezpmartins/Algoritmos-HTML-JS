@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Coloque um numero abaixo:
+    <input min="20" max="100" type="number" id="input_numeroUser"><br>
+    <button onclick="multiplode5()"> Adoro Múltiplo de 5 </button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function multiplode5() {
+        var numero = input_numeroUser.value;
+        var repeticao = 5;
+        div_mensagem.innerHTML = '';
+
+        while (repeticao <=numero) {
+            div_mensagem.innerHTML += `<br> ${repeticao} <br>`
+            repeticao += 5;
+    
+        }
+
+    }
+</script>

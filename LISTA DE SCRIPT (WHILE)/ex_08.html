@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite  um número abaixo:
+    <input min="0" max="200" type="number" id="input_numeroUser"><br>
+    <button onclick="multiplode7()"> Viva o 7 </button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function multiplode7() {
+        var numero = input_numeroUser.value;
+        var repeticao = 7;
+        div_mensagem.innerHTML = '';
+
+        while (repeticao <=numero) {
+            div_mensagem.innerHTML += `<br> ${repeticao} <br>`
+            repeticao += 7;
+    
+        }
+
+    }
+</script>
