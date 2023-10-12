@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a idade do usuario:
+    <input id="input_idade" onkeyup="analisarIdade()"><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+     function analisarIdade(){
+        var idadeUser = Number(input_idade.value);
+        var idade = 0;
+        div_resultado.innerHTML = '';
+        
+
+        while(idade<=idadeUser){
+
+            if(idade<=4){
+                div_resultado.innerHTML += `${idade} anos -(Primeira Infância)<br> `;
+            }
+            else if (idade<= 6){
+                div_resultado.innerHTML += `${idade} anos -(Pré Escolar)<br> `;
+            }
+            else if (idade<=10){
+                div_resultado.innerHTML += `${idade} anos -(Segunda Infância)<br> `;
+            }
+            else if (idade<=18){
+                div_resultado.innerHTML += `${idade} anos -(Adolescência)<br> `;
+            }
+            else if (idade<=50){
+                div_resultado.innerHTML += `${idade} anos -(Adulto)<br> `;
+            }
+            else if (idade<=100){
+                div_resultado.innerHTML += `${idade} anos -(Melhor Idade)<br> `;
+            }
+            else {
+                div_resultado.innerHTML += `${idade} anos -(Matusalém)<br> `;
+            }
+            idade += 1;
+        }
+        
+    }
+</script>

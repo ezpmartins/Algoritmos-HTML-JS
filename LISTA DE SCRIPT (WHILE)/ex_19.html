@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe quantas xícaras de café  com leite já tomou na vida:
+    <input type="text" id="input_qtd_xicaras"><br>
+    <button onclick="verQuantidade()">Ver Quantidade</button><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function verQuantidade(){
+        var qtdXicarasCafeLeite = Number(input_qtd_xicaras.value);
+        var xicarasCafeLeite = 1;
+        var colherLeite = 1;
+        var colherCafe = 2;
+        div_mensagem.innerHTML='';
+        
+        while(xicarasCafeLeite<=qtdXicarasCafeLeite){
+            div_mensagem.innerHTML +=
+            ` ${colherLeite} colheres com leite em pó e ${colherCafe} colheres de café em pó<br>`
+
+            xicarasCafeLeite+= 1;
+            colherLeite += 1;
+            colherCafe +=2;
+        }
+
+    }
+</script>

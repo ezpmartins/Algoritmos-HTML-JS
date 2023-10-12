@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantidade de depositos feitos no banco:
+    <input id="input_deposito"><br>
+    Valor do Deposito:
+    <input id="input_valor_deposito"><br>
+    <button onclick="verificarDinheiro()">Acompanhar Grana</button><br>
+    <span id="span_resultado"></span>
+</body>
+
+</html>
+<script>
+    function verificarDinheiro() {
+        var qtdDepositos = Number(input_deposito.value);
+        var valorDeposito = Number(input_valor_deposito.value);
+
+        var mes = 1;
+        var depositos = valorDeposito;
+
+        span_resultado.innerHTML = '';
+
+
+        while (mes <= qtdDepositos) {
+
+            if (mes % 3 == 0) {
+                depositos = depositos + (depositos * 0.01);
+            }
+            var totalGuardado = depositos;
+
+            span_resultado.innerHTML += `${mes}° mês  R$ ${depositos}<br>`
+
+            mes += 1;
+            depositos += valorDeposito;
+
+        }
+        span_resultado.innerHTML += `Total Guardado: R$ ${totalGuardado}`;
+
+    }
+</script>

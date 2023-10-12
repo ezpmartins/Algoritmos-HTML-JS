@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantas pessoas vão entrar no carro:
+    <input type="text" id="input_pessoas_carro"><br>
+    <button onclick="verificarCarona()">#Partiu Carona</button><br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function verificarCarona() {
+        var passageiros = Number(input_pessoas_carro.value);
+        var incrementoPassageiros = 1;
+        div_mensagem.innerHTML = '';
+
+        while (incrementoPassageiros <= passageiros) {
+
+            if (incrementoPassageiros == 1) {
+                div_mensagem.innerHTML = `Entrou o ${incrementoPassageiros}° passageiro ( que é o (a) Motorista )<br>`
+            }
+            else if (incrementoPassageiros <= 5) {
+                div_mensagem.innerHTML += `Entrou o ${incrementoPassageiros}° passageiro<br>`
+            }
+            else {
+                div_mensagem.innerHTML += `O ${incrementoPassageiros}° passageiro terá que esperar!<br> `
+            }
+            incrementoPassageiros += 1;
+        }
+    }
+</script>

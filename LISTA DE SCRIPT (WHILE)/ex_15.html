@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informe a quantidade elefantes:
+    <input type="text" id="input_qtd_elefantes"><br>
+    <button onclick="atazanarMedium()">Atazanar a Médium </button><br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+<script>
+    function atazanarMedium() {
+        var qtdElefantes = Number(input_qtd_elefantes.value);
+        var elefantes = 1;
+        var repeticaoTexto = 0;
+        var vezesIncomodam = '   incomodam';
+        div_resultado.innerHTML = '';
+
+        while (elefantes <= qtdElefantes) {
+            if (elefantes == 1) {
+                div_resultado.innerHTML += `<br>${elefantes} elefante incomoda muita gente!<br>`
+            }
+            else if(elefantes<=qtdElefantes) {
+                div_resultado.innerHTML += `<br> ${elefantes} elefantes ${vezesIncomodam}  muito mais !<br>
+                <br>  1 elefante incomoda muita gente!<br>`
+            }
+            vezesIncomodam += '&nbsp icomodam &nbsp';
+            elefantes += 1;
+        }
+
+        
+        // while (elefantes % (qtdElefantes+1)==0){
+        //     div_resultado.innerHTML +=  `<br>${elefantes} elefante incomoda muita gente!<br>`
+        //     elefantes += 1;
+        // }
+
+
+
+        // while (elefantes % 2 == 0) {
+        //     div_resultado.innerHTML = `<br< ${elefantes} elefante incomoda muita gente !<br>`
+        //     vezesIncomodam += 'icomodam';
+        //     elefantes += 1;
+        // }
+
+    }
+
+
+
+
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    De quantos em quantos dias da semana vc faz musculação:
+    <input id="input_dia_musculacao"><br>
+    <button onclick="exibirRotina()">Exibir Rotina Mensal</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+
+</html>
+<script>
+    function exibirRotina() {
+        var qtdVezesTreino = Number(input_dia_musculacao.value);
+        var dia = 1;
+        div_mensagem.innerHTML = '';
+
+
+
+        while (dia <= 30) {
+            if (dia % (qtdVezesTreino + 1) == 0) {
+                div_mensagem.innerHTML += `Dia ${dia} - Musculação <br>`;
+            }
+            else if (dia == 1) {
+                div_mensagem.innerHTML = `Dia ${dia} - Musculação <br>`
+            }
+            else {
+                div_mensagem.innerHTML += `Dia ${dia}- Comer, dormir etc.<br>`;
+            }
+            dia += 1;
+        }
+    }
+</script>

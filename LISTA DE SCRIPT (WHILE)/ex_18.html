@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe quantas latinhas já bebeu de coca-cola na vida:
+    <input type="text" id="input_qtd_latinhas"><br>
+    <button onclick="verQuantidade()">Ver Quantidade</button><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function verQuantidade(){
+        var qtdLatinhas = Number(input_qtd_latinhas.value);
+        var cocaCola= 1;
+        div_resultado.innerHTML = '';
+
+        while (cocaCola<=qtdLatinhas){
+            div_resultado.innerHTML += `Você já tomou ${cocaCola} latinhas de Coca-Cola na vida &nbsp &nbsp`;
+            cocaCola+=1;
+        }
+
+    }
+</script>

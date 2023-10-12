@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Qual numero gostaria deseja ver sua tabuada (2 a 9):
+    <select name="select" id="select_numero">
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+    </select><br><br>
+    Qual numero essa tabuada deve ir:
+    <input id="input_multiplicador"><br><br>
+    <button onclick="verTabuada()">Ver Tabuada</button><br>
+    <div id="div_mostrar_tabuada"></div><br>
+</body>
+
+</html>
+<script>
+    function verTabuada() {
+        var numeroTabuada = Number(select_numero.value);
+        var multiplicador = Number(input_multiplicador.value);
+
+        var ordemMultiplicador = 1;
+
+        div_mostrar_tabuada.innerHTML = '';
+
+
+        while (ordemMultiplicador <= multiplicador) {
+
+
+            if (ordemMultiplicador % 2 == 0) {
+
+                div_mostrar_tabuada.innerHTML += `<br><font color = 'blue'> ${numeroTabuada} X ${ordemMultiplicador} = ${numeroTabuada*ordemMultiplicador}</font>`;
+                
+            }
+            else {
+                div_mostrar_tabuada.innerHTML+= `<br><font color= 'red'> ${numeroTabuada} X ${ordemMultiplicador} = ${numeroTabuada*ordemMultiplicador}</font>`
+            }
+            ordemMultiplicador += 1;
+        }
+        
+    }
+</script>

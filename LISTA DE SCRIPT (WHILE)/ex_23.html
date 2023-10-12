@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informe o limite inferior da amostragem:
+    <input id="input_limite_inferior_amostragem"><br>
+    Informe o limite superior da amostragem:
+    <input id="input_limite_superior_amostragem"><br>
+    Número para testar a divisibilidade:
+    <input id="input_teste_divisibilidade"><br>
+    <button onclick="verificarDivisibilidade()">Contar</button><br>
+    <div id="div_numeros_divisores"></div>
+
+</body>
+
+</html>
+<script>
+    function verificarDivisibilidade() {
+        var limiteInferior = Number(input_limite_inferior_amostragem.value);
+        var limiteSuperior = Number(input_limite_superior_amostragem.value);
+        var divisor = Number(input_teste_divisibilidade.value);
+        var contador = limiteInferior;
+        var soma = 0;
+        var qtdNumeros = 0;
+        var maiorNumero = 0;
+        var menorNumero = 0;
+
+        div_numeros_divisores.innerHTML = '';
+
+        if (limiteInferior < 1) {
+            alert(`O Limite inferior tem que ser maior que o número 1, caso contrário o programa será encerrado!`);
+        }
+        else if (limiteSuperior > 100) {
+            alert(`O Limite Superior  tem que ser menor que o número 100, caso contrário o programa será encerrado!`);
+        }
+        else if (divisor < 3 || divisor > 10) {
+            alert(`O número para testar a divisibilidade deve estar entre 3 e 10, caso contrário o  programa será encerrado!`);
+        }
+        else {
+
+            while (contador <= limiteSuperior) {
+                if (contador % divisor == 0) {
+                    div_numeros_divisores.innerHTML += `${contador}&nbsp,`;
+                    qtdNumeros += 1;
+                    soma = soma + contador;
+                    maiorNumero = contador;
+                    
+                }
+                if(limiteInferior % divisor == 0){
+                    menorNumero = limiteInferior;
+                }
+                else{
+                    limiteInferior+=1;
+                }
+
+
+                contador += 1;
+
+            }
+
+        }
+        div_numeros_divisores.innerHTML += `
+        <br>QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: ${qtdNumeros}
+        <br>SOMATÓRIO DOS NÚMEROS EXIBIDOS: ${soma}
+        <br>MÉDIA DOS NÚMEROS EXIBIDOS: ${soma / qtdNumeros}
+        <br>MAIOR NÚMERO EXIBIDO: ${maiorNumero}
+        <br>MENOR NÚMERO EXIBIDO: ${menorNumero}`
+    }
+
+</script>
