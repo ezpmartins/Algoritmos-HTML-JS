@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informe um número positivo:
+    <input type="text" id="input_numero_positivo"><br>
+    Informe um numero para testes de Divisibilidade:
+    <input type="text" id="input_numero"><br>
+    <button onclick="somarNumeros()">Somar Números</button><br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function somarNumeros() {
+        var numeroLimite = Number(input_numero_positivo.value);
+        var numeroAtual = Number(input_numero.value);
+        var multiplos = 1;
+        var soma = 0;
+
+        div_mensagem.innerHTML = '';
+
+        while (multiplos <= numeroLimite) {
+            if (numeroLimite % multiplos == 0) {
+                soma = soma + multiplos;
+                div_mensagem.innerHTML += `${multiplos}<br>`;
+            }
+            
+            multiplos += 1;
+        }
+        div_mensagem.innerHTML+= `A soma dos multiplos é: ${soma}`;
+    }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um número:
+    <input  type="number" id="input_numero" min="0"  max="100"><br>
+    <button onclick="verDivisores()"> Ver Divisores</button><br>
+    <div id="div_numeros"></div>
+</body>
+</html>
+<script>
+    function verDivisores(){
+        var numeros = Number (input_numero.value);
+        var incrementoNumeros = 1;
+        div_numeros.innerHTML = '';
+
+        while(incrementoNumeros<= numeros){
+            if (numeros%incrementoNumeros == 0){
+                div_numeros.innerHTML += `${incrementoNumeros}<br>`
+            }
+            incrementoNumeros+=1;
+        }
+
+        
+    }
+</script>

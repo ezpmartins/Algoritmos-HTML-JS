@@ -18,41 +18,26 @@
 <script>
     function atazanarMedium() {
         var qtdElefantes = Number(input_qtd_elefantes.value);
-        var elefantes = 1;
-        var repeticaoTexto = 0;
-        var vezesIncomodam = '   incomodam';
+        var elefantes = 2;
+        var vezesIncomodam = 'incomodam';
         div_resultado.innerHTML = '';
 
         while (elefantes <= qtdElefantes) {
-            if (elefantes == 1) {
-                div_resultado.innerHTML += `<br>${elefantes} elefante incomoda muita gente!<br>`
+            
+                div_resultado.innerHTML += `<br> 1 elefante incomoda muita gente!<br>`
+                
+            
+             if(elefantes<=qtdElefantes) {
+                
+                 
+                 div_resultado.innerHTML += `<br> ${elefantes} elefantes icomodam ${vezesIncomodam}  muito mais !<br>
+                <br>`
+                 
             }
-            else if(elefantes<=qtdElefantes) {
-                div_resultado.innerHTML += `<br> ${elefantes} elefantes ${vezesIncomodam}  muito mais !<br>
-                <br>  1 elefante incomoda muita gente!<br>`
-            }
+            
             vezesIncomodam += '&nbsp icomodam &nbsp';
-            elefantes += 1;
+            elefantes+=1;
         }
-
-        
-        // while (elefantes % (qtdElefantes+1)==0){
-        //     div_resultado.innerHTML +=  `<br>${elefantes} elefante incomoda muita gente!<br>`
-        //     elefantes += 1;
-        // }
-
-
-
-        // while (elefantes % 2 == 0) {
-        //     div_resultado.innerHTML = `<br< ${elefantes} elefante incomoda muita gente !<br>`
-        //     vezesIncomodam += 'icomodam';
-        //     elefantes += 1;
-        // }
-
     }
-
-
-
-
 
 </script>
