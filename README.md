@@ -1,3 +1,3 @@
 # Algoritmos-HTML-JS
 
-Repositório dedicado a Máteria de Algoritmos do curso de ADS👌
+Repositório dedicado a Matéria de Algoritmos
