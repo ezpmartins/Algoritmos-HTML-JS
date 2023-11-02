@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Qual o Preço de um produto:
+    <input id="input_preco_produto">
+    <button onclick="cadastrarProduto()">Cadastrar Produto</button><br>
+    <button onclick="atualizarestoque()">Atualizar Estoque</button><br>
+    <span id="span_mensagem"></span>
+</body>
+
+</html>
+<script>
+    var listaPrecoProdutos = [];
+
+
+    function cadastrarProduto() {
+        var precoProdutos = Number(input_preco_produto.value);
+        listaPrecoProdutos.push(precoProdutos);
+    }
+    function atualizarestoque() {
+        var precoProdutos = Number(input_preco_produto.value);
+        var somaProdutos = 0;
+        span_mensagem.innerHTML = '';
+
+        for (var qtdProdutos = 0; qtdProdutos < listaPrecoProdutos.length; qtdProdutos += 1) {
+            somaProdutos += listaPrecoProdutos[qtdProdutos];
+            span_mensagem.innerHTML = `Você tem ${listaPrecoProdutos.length} produtos cadastrados em estoque<br> 
+                                        Seu estoque vale R$${somaProdutos}`;
+        }
+    }
+</script>

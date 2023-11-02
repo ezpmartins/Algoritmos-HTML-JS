@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Indique o resultado:
+    <select id="select_resultado_jogo">
+        <option value="Vitoria">Vitória</option>
+        <option value="Empate">Empate</option>
+        <option value="Derrota">Derrota</option>
+    </select>
+    <button onclick="registrarJogo()">Registrar Jogo </button><br><br>
+    Indique o numero do jogo que deseja saber o resultado:
+    <input type="number" id="input_jogo_desejado">
+    <button onclick="verificarJogoDesejado()">Vericar Jogo</button><br><br>
+    <div id="div_resultado_jogo"></div>
+    <span id="span_resultado_jogo"></span>
+
+</body>
+
+</html>
+<script>
+    var listaResultado = [];
+    var vitoria = 0;
+    var empate = 0;
+    var derrota = 0;
+
+    function registrarJogo() {
+        var resultado = select_resultado_jogo.value;
+
+        vitoria = 0;
+        empate = 0;
+        derrota = 0;
+
+        div_resultado_jogo.innerHTML = '';
+
+        listaResultado.push(resultado);
+
+        for (var cont = 0; cont < listaResultado.length; cont += 1) {
+            if (listaResultado[cont] == "Vitoria") {
+                vitoria += 1;
+            }
+            else if (listaResultado[cont] == "Empate") {
+                empate += 1;
+            }
+            else if (listaResultado[cont] == "Derrota") {
+                derrota += 1;
+            }
+        }
+        var totalPontos = vitoria * 3 + empate;
+        var pontosPossiveis = listaResultado.length * 3; // Guardar valores 
+        var aproveitamento = (totalPontos / pontosPossiveis) * 100;
+
+
+        div_resultado_jogo.innerHTML = `
+        O time teve: ${vitoria} vitórias, ${empate} empates, ${derrota} derrotas<br> 
+        Pontuação total: ${totalPontos} <br> 
+        Aproveitamento: ${aproveitamento}% <br>`
+    }
+
+    function verificarJogoDesejado() {
+        var numeroJogo = input_jogo_desejado.value;
+
+        if (numeroJogo > 1 && numeroJogo <= listaResultado.length) {
+            var resultadoJogoDesejado = listaResultado[numeroJogo - 1];
+            var frase = `No ${numeroJogo}° jogo, o time `;
+            if (resultadoJogoDesejado == "Vitoria") {
+                frase += "Ganhou";
+            }
+            else if (resultadoJogoDesejado == "Empate") {
+                frase += "Empatou";
+            }
+            else if (resultadoJogoDesejado == "Derrrota") {
+                frase += "Perdeu";
+            }
+            span_resultado_jogo.innerHTML = frase;
+        }
+        else {
+            span_resultado_jogo.innerHTML = `Não foi cadastrado um ${numeroJogo}º jogo.`
+        }
+    }
+
+</script>

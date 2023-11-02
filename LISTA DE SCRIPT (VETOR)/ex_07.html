@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informe seus filmes favoritos:
+    <input id="input_filmes"><br>
+    <button onclick="mostrarFilmes()">Cadastrar Filmes</button><br>
+    <span id="span_filmes"></span>
+</body>
+
+</html>
+<script>
+    var listaFilmes = [];
+
+
+
+    function mostrarFilmes() {
+
+        var filmes = input_filmes.value;
+        listaFilmes.push(filmes);
+        span_filmes.innerHTML = '';
+
+        for (var cont = 0; cont < listaFilmes.length; cont += 1) {
+
+            if (cont % 2 == 0) {
+                span_filmes.innerHTML += `<p style = "color:blue"> ${listaFilmes[cont]}</p>`
+            }
+            else {
+                span_filmes.innerHTML += `<p style = "color:red"> ${listaFilmes[cont]}</p>`
+            }
+
+
+        }
+    }
+</script>

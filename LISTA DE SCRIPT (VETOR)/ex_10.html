@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nomes das linhas de ônibus que pegou durante a semana:
+    <input id="input_linhas_onibus"><br>
+    <button onclick="registrarLinhaBusao()">Gravar Busão</button><br>
+    <span id="span_onibus"></span>
+    Pesquisar por uma linha que já tenha pego:
+    <input id="input_linhas_pegadas"><br>
+    <button onclick="pesquisarLinhas()">Pesquisar</button><br>
+    <span id="span_linhas_onibus"></span>
+</body>
+
+</html>
+<script>
+    listaLinhasOnibus = [];
+
+    function registrarLinhaBusao() {
+        var linhasOnibus = input_linhas_onibus.value;
+        listaLinhasOnibus.push(linhasOnibus);
+
+        for (var cont = listaLinhasOnibus.lentgh; cont > 0; cont -= 1) {
+            span_onibus.innerHTML += `${listaLinhasOnibus[cont - 1]}<br>`
+        }
+    }
+
+    function pesquisarLinhas() {
+        var linhasOnibusPegadas = input_linhas_pegadas.value;
+
+        for (var linhasPegas = 0; linhas <= listaLinhasOnibus.lentgh; linhaspegas += 1) {
+            if (listaLinhasOnibus == linhasOnibusPegadas) {
+                span_linhas_onibus.innerHTML = `Você já pegou essa linha ${linhasPegas} vezes, nessa ordem: 2, 4, 8, 9`;
+            } else {
+                span_linhas_onibus.innerHTML = "Você nunca pegou essa linha !"
+            }
+
+        }
+
+
+    }
+</script>

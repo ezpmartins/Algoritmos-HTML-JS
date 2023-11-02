@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome do Produto:
+    <input id="input_nome_produto"><br><br><br>
+    Preço do Produto:
+    <input id="input_preco_produto"><br><br>
+    <button onclick="cadastrarProdutos()">Cadastrar Produtos</button>
+    <button onclick="visualizarEstoque()">Ver Estoque</button><br>
+    <div id="div_produtos"></div>
+</body>
+
+</html>
+<script>
+    var listaProdutos = [];
+    var listaPrecoProdutos = [];
+
+    function cadastrarProdutos() {
+        var nomeProduto = input_nome_produto.value;
+        var precoProduto = Number(input_preco_produto.value);
+
+        listaProdutos.push(nomeProduto);
+        listaPrecoProdutos.push(precoProduto);
+    }
+
+    function visualizarEstoque() {
+
+        var produtoMaisCaro = listaProdutos[0];
+        var produtoMaisBarato = listaProdutos[0];
+        var somaPrecosProdutos = 0;
+
+        div_produtos.innerHTML = `<p><b>Total Produtos: ${listaProdutos.length}</b></p>`
+
+        for (var cont = 0; cont < listaProdutos.length; cont += 1) {
+
+            var precoCompra = listaPrecoProdutos[cont];
+            var precoVenda = listaPrecoProdutos[cont] * 1.25;
+
+            somaPrecosProdutos += precoCompra;
+            if (precoCompra > listaPrecoProdutos[listaProdutos.indexOf(produtoMaisCaro)]) {
+                produtoMaisCaro = listaProdutos[cont];
+            }
+            if (precoCompra < listaPrecoProdutos[listaProdutos.indexOf(produtoMaisBarato)]) {
+                produtoMaisBarato = listaProdutos[cont];
+            }
+            div_produtos.innerHTML += `Produto ${cont + 1}:${listaProdutos[cont]}<br><br>
+            Preço de Compra: R$ ${listaPrecoProdutos[cont]}. Vender por R$ ${precoVenda}<br><br>`;
+        }
+        var mediaPrecosProdutos = somaPrecosProdutos / listaProdutos.length * 1.25;
+
+        div_produtos.innerHTML += `Produto Mais Caro: ${produtoMaisCaro}<br>
+                                    Produto Mais Barato: ${produtoMaisBarato}<br
+                                        Soma dos Preços de Compra: R$ ${somaPrecosProdutos}<br>
+                                            Média de Preço de Venda: R$ ${mediaPrecosProdutos}`;
+
+
+    }
+</script>

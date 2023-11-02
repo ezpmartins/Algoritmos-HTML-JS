@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quais os projetos você já fez na vida:
+    <input id="input_projetos"><br>
+    <button onclick="registrarProjeto()">Registrar Projetos</button><br>
+    <span id="span_projetos"></span><br><br>
+    <button onclick="mostrarProjetos()">Mostrar Projetos</button><br>
+    <span id="span_projetos_inverso"></span>
+</body>
+
+</html>
+<script>
+    var listaProjetos = [];
+
+    function registrarProjeto() {
+        var projeto = input_projetos.value;
+        listaProjetos.push(projeto);
+
+        if (listaProjetos.length <= 4) {
+            span_projetos.innerHTML = `Você já fez ${listaProjetos.length} projetos. Por isso você é um profissional Junior.`
+        }
+        else if (listaProjetos.length <= 12) {
+            span_projetos.innerHTML = `Você já fez ${listaProjetos.length} projetos. Por isso você é um profissional Pleno.`
+        }
+        else {
+            span_projetos.innerHTML = `Você já fez ${listaProjetos.length} projetos. Por isso você é um profissional Senior.`
+        }
+    }
+    function mostrarProjetos() {
+        span_projetos_inverso.innerHTML = `<b> Total de Projetos:</b><br>`
+        for (var cont = listaProjetos.length; cont > 0; cont -= 1) {
+            span_projetos_inverso.innerHTML += `<br> ${listaProjetos[cont - 1]}<br>`
+        }
+    }
+</script>

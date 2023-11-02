@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Cadastre nomes de alunos:
+    <input id="input_nome_aluno"><br>
+    <button onclick="cadastrarAluno()">Cadastrar Aluno</button><br>
+    <span id="span_nome_aluno"></span>
+</body>
+
+</html>
+<script>
+    var listaNomesAlunos = [];
+
+    function cadastrarAluno() {
+        var nomesAlunos = input_nome_aluno.value;
+        listaNomesAlunos.push(nomesAlunos);
+        span_nome_aluno.innerHTML = '';
+
+        for (var cont = listaNomesAlunos.length; cont > 0; cont -= 1) {
+            span_nome_aluno.innerHTML += `${listaNomesAlunos[cont -1]}<br>`
+        }
+
+    }
+</script>
