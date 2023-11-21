@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="jogar()">Jogar</button>
+    <div id="div_joken_po"></div>
+</body>
+
+</html>
+<script>
+    var listaJokenPo = [
+        ' https://jeffersonjr.github.io/projetos/jokenpo/img/tesoura.png',
+        '  https://jokenpoo.netlify.app/assets/img/pedra.png',
+        '  https://jokenpoo.netlify.app/assets/img/papel.png'
+    ];
+    function jogar() {
+        var jokenPo = parseInt(Math.random() * listaJokenPo.length);
+        div_joken_po.innerHTML = `<img src = ${listaJokenPo[jokenPo]} height = '200px;'>`;
+    }
+</script>

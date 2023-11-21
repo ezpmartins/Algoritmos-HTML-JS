@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite o X1:
+    <input type="number" min="0" id="input_x1"><br>
+    Digite o Y1:
+    <input type="number" min="0" id="input_y1"><br>
+    Digite o X2:
+    <input type="number" min="0" id="input_x2"><br>
+    Digite o Y2:
+    <input type="number" min="0" id="input_y2"><br>
+    Digite o -X1:
+    <input type="number" min="0" id="input_linhax1"><br>
+    Digite o -Y1:
+    <input type="number" min="0" id="input_linhay1"><br>
+    Digite o -X2:
+    <input type="number" min="0" id="input_linhax2"><br>
+    Digite o -Y2:
+    <input type="number" min="0" id="input_linhay2"><br>
+    <button onclick="calcularColisão()"> Calcular Colisão</button><br>
+    <div id="div_resposta"></div>
+</body>
+
+</html>
+<script>
+
+    function calcularColisão() {
+
+        // 1° RETANGULO
+
+        var X1 = Number(input_x1.value);
+        var Y1 = Number(input_y1.value);
+        var X2 = Number(input_x2.value);
+        var Y2 = Number(input_y2.value);
+
+        // 2° RETANGULO
+
+        var xLinha1 = Number(input_linhax1.value);
+        var yLinha1 = Number(input_linhay1.value);
+        var xLinha2 = Number(input_linhax2.value);
+        var ylinha2 = Number(input_linhay2.value);
+        var entrada = 0;
+
+
+
+        if (xLinha1 <= X2) {
+
+            if (yLinha1 <= Y2) {
+
+                if (X1 <= xLinha2) {
+
+                    if (Y1 <= ylinha2) {
+
+                        entrada = 1
+
+                    }
+                }
+            }
+        }
+
+        div_resposta.innerHTML =
+
+            `${X1}   ${Y1}   ${X2}   ${Y2}  <br>
+    <br>
+    ${xLinha1}   ${yLinha1}   ${xLinha2}   ${ylinha2} <br>
+    <br>
+
+      ${entrada}`
+
+    }
+
+</script>

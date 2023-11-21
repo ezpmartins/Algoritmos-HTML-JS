@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sortearNumeros()">Sortear</button>
+    <div id="div_numeros_random"></div>
+</body>
+</html>
+<script>
+    function sortearNumeros(){
+        var listaNumeros = Math.random();
+        div_numeros_random.innerHTML = `${listaNumeros}<br>`;
+    if(listaNumeros > 0.5){
+        div_numeros_random.innerHTML+= `Eu arredondaria para 1<br>`;
+    }
+    else{
+        div_numeros_random.innerHTML+= `Eu arredondaria para 0`;
+    }
+
+    }
+    
+</script>

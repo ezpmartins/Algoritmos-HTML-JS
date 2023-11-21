@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="sortearTime()">Sortear</button>
+    <div id="div_times"></div>
+    
+</body>
+
+</html>
+<script>
+    var listaTimes = [
+        'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/874.png',
+        'https://upload.wikimedia.org/wikipedia/commons/1/15/Santos_Logo.png',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/2054px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png',
+        'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/18126.png'
+    ];
+
+    function sortearTime() {
+        var times = parseInt(Math.random()*listaTimes.length);
+
+        div_times.innerHTML = `<img src = ${listaTimes[times]} height= '150px'>`;
+
+    }
+</script>

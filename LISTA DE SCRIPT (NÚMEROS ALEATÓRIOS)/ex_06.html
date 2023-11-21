@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="sortearMomentoDia()">Sortear Momento do Dia</button><br>
+    <div id="div_momento_dia"></div>
+</body>
+
+</html>
+<script>
+    function sortearMomentoDia() {
+        var horaDia = parseInt(Math.random() * 23 + 1);
+
+        if (horaDia >= 0 && horaDia <= 11) {
+            div_momento_dia.innerHTML = `Bom dia, flor do dia, São ${horaDia}h!`;
+        }
+        else if (horaDia >= 12 && horaDia <= 17) {
+            div_momento_dia.innerHTML = `Boa tarde, já vai tarde! São ${horaDia}h!`;
+
+        }
+        else {
+            div_momento_dia.innerHTML = `Boa noite, durma bem! São ${horaDia}h!`;
+        }
+    }
+</script>

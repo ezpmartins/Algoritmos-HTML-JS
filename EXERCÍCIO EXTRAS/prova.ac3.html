@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Programa de Interestelar</h1><br>
+    Nome do Astronauta:
+    <input id="input_nome_astronauta"><br><br>
+    Quantidade de dias:
+    <input type="number" id="input_qtd_dias"><br><br>
+    Quantidade de horas:
+    <input type="number" id="input_qtd_horas"><br><br>
+    Quantidade de minutos:
+    <input type="number" id="input_qtd_minutos"><br><br><br>
+    <button onclick="registrarViagem()">Resgitrar Viagem</button>
+    <button onclick="relatarViagem()">Relatório de Viagem</button><br><br>
+    <div id="div_viagens_registradas"></div>
+    <div id="div_viagem_temporal"></div>
+    <div id="div_imagem"></div>
+</body>
+
+</html>
+<script>
+
+    var listaNomes = [];
+    var listaDias = [];
+    var listaHoras = [];
+    var listaMinutos = [];
+    var listaAnos = [];
+
+    function registrarViagem() {
+        var nome = input_nome_astronauta.value;
+        var dias = Number(input_qtd_dias.value);
+        var horas = Number(input_qtd_horas.value);
+        var minutos = Number(input_qtd_minutos.value);
+
+        if (dias < 0 || horas < 0 || minutos < 0) {
+            alert(`Informe um tempo de viagem válido!`);
+        }
+        else {
+            listaNomes.push(nome);
+            listaDias.push(dias);
+            listaHoras.push(horas);
+            listaMinutos.push(minutos);
+        }
+    }
+
+    function relatarViagem() {
+
+        var nome = input_nome_astronauta.value;
+        var dias = Number(input_qtd_dias.value);
+        var horas = Number(input_qtd_horas.value);
+        var minutos = Number(input_qtd_minutos.value);
+        var minutoForaTerra = 49 * minutos;
+        var diaForaTerra = 1440 * dias;
+        var horaForaTerra = 60 * horas;
+        var tempoTotal = diaForaTerra + minutoForaTerra + horaForaTerra;
+        var ano = tempoTotal.toFixed(3);
+        var anoTotal = ano / 525600;
+        var anos = anoTotal.toFixed(5);
+
+        div_viagem_temporal.innerHTML = "";
+
+        for (var contViagens = 0; contViagens < listaDias.length; contViagens++) {
+            
+            div_viagens_registradas.innerHTML = `Foram Registradas ${contViagens + 1},detalhadas a seguir:<br>`;
+            div_viagem_temporal.innerHTML +=
+                `
+            <br>
+            Viagem ${contViagens + 1}:<br><br>
+            Astronauta ${listaNomes[contViagens]} ficou fora por pelo menos ${anos} anos no tempo da Terra.
+            A criança que nasceu quando ele saiu provavelmente está assim:<br><br>
+        `
+            div_imagem.innerHTML = '';
+
+            if (anoTotal <= 13) {
+                div_imagem.innerHTML += `<img src="Bartnovo.png" height = '200px;''><br>`
+            }
+            else if (anoTotal <= 30) {
+                div_imagem.innerHTML += `<img src="BartSofa.png" height = '200px;'><br>`
+            }
+            else if (anoTotal <= 65) {
+                div_imagem.innerHTML += `<img src="BartHomer.png" height = '200px;'><br>`
+            }
+            else if (anoTotal <= 100) {
+                div_imagem.innerHTML += `<img src="BartVelho.png" height = '200px;'><br>`
+            }
+            else {
+                div_imagem.innerHTML += `<img src="BartMorto.png" height = '200px;'><br>`
+            }
+        }
+    }
+
+</script>

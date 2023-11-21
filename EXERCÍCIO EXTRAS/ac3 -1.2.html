@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Importação e revenda de tapetes de luxo</h1><br>
+    Código do Produto
+    <input id="input_codigo_produto"><br>
+    Nome do Produto:
+    <input id="input_nome_produto"><br>
+    Quantidade do Produto:
+    <input id="input_qtd_produtos"> <br>
+    <button onclick="cadastrarProdutos()">Salvar Produto</button>
+    <button onclick="visualizarProdutos()">Ver Estoque</button>
+    <div id="div_resultado"></div>
+    <div id="div_estoque"></div>
+</body>
+
+</html>
+<script>
+    var listaCodigosProdutos = [];
+    var listaNomeProdutos = [];
+    var listaQtdProdutos = [];
+
+    function cadastrarProdutos() {
+        var codigoProduto = input_codigo_produto.value;
+        var nomeProduto = input_nome_produto.value;
+        var qtdProdutos = input_qtd_produtos.value;
+
+        if (codigoProduto == "") {
+            alert(`Código Inválido para  o Produto !`);
+        } else if (nomeProduto == "") {
+            alert(`Nome Inválido para  o Produto !`);
+        } else if (qtdProdutos <= 0) {
+            alert(`Quantidade Inválida para  o Produto !`)
+        }
+        else {
+            listaCodigosProdutos.push(codigoProduto);
+            listaNomeProdutos.push(nomeProduto);
+            listaQtdProdutos.push(qtdProdutos);
+
+            div_resultado.innerHTML = '';
+
+            for (var indice = 0; indice < listaCodigosProdutos.length; indice++) {
+
+                if (codigoProduto == listaCodigosProdutos[indice]) {
+                    codigoProduto += listaQtdProdutos[indice]
+                    alert(`O Produto de Código ${listaCodigosProdutos[indice]} teve sua quantidade aumentada`)
+                    break;
+                }
+                else {
+                    alert(`Produto Cadastrado com Sucesso`);
+                }
+            }
+
+        }
+    }
+
+    function visualizarProdutos() {
+        var codigoProduto = input_codigo_produto.value;
+        var nomeProduto = input_nome_produto.value;
+        var qtdProdutos = input_qtd_produtos.value;
+        var precoProduto = parseInt(Math.random() * 999 + 1);
+        div_estoque.innerHTML = '';
+
+        for (var cont = 0; cont < listaCodigosProdutos.length; cont++) {
+
+            div_estoque.innerHTML +=
+                `<br>Código do Produto:${listaCodigosProdutos[cont]}<br>
+            Nome do Produto: ${listaNomeProdutos[cont]}<br>
+            Quantidade do Produto:${listaQtdProdutos[cont]}<br>
+            Preço do Produto: R$${precoProduto},00<br>`;
+        }
+
+
+
+    }
+
+
+</script>

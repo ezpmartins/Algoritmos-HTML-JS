@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa naruto </title>
+</head>
+
+<body>
+    <h1>Criação de Clones Naruto</h1><br>
+    Quantidade de pontos de Chakra:
+    <input id="input_qtd_pontos_chakra"><br><br>
+    Quantidade de clones desejada:
+    <input id="input_qtd_clones"><br><br>
+    Clones por linha:
+    <input id="input_clones_linha"><br><br>
+    <button onclick="verificarClones()"> Criar Clones</button><br><br>
+    <div id="div_clones"></div>
+</body>
+
+</html>
+<script>
+    function verificarClones() {
+        var qtdPontosChakra = Number(input_qtd_pontos_chakra.value);
+        var qtdClones = Number(input_qtd_clones.value);
+        var clonesLinha = input_clones_linha.value;
+        var sobraDeChakra = qtdPontosChakra - qtdClones * 20;
+        var fraseGanhandor = "PROVAVELMENTE VOCÊ VAI GANHAR";
+        var fraseIntermediario = "A LUTA VAI SER MUITO BOA";
+        var frasePerdedor = "TORÇA PARA O ADVERSÁRIO SER FRAQUINHO";
+        var percentualSobraDeChakra = sobraDeChakra / qtdPontosChakra * 100;
+        var clonesNarutoTotal = 1;
+        div_clones.innerHTML = '';
+
+
+
+        if (qtdPontosChakra <= 20 && qtdPontosChakra <= 5000) {
+        }
+        else if (qtdClones <= 0 && qtdClones >= 250) {
+        }
+        else if (clonesLinha > 0) {
+        }
+        else {
+            alert(`“ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0”.`)
+        }
+
+        if (qtdPontosChakra >= qtdClones * 20) {
+
+            while (clonesNarutoTotal <= qtdClones) {
+
+
+                div_clones.innerHTML += `<img style="width: 100px;" src="naruto.png">`
+                clonesNarutoTotal += 1;
+            }
+        }
+        else {
+            alert(`“ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0”.`)
+            div_clones.innerHTML = '';
+        }
+        
+        div_clones.innerHTML += `<br><br> 
+
+            ANÁLISE DA GERAÇÃO DE CLONES<br>
+
+            Chakra Inicial: ${qtdPontosChakra}<br> 
+
+            Quantidade de Clones: ${qtdClones} <br>
+
+            Sobra de Chakra:${sobraDeChakra}<br>`
+        if (sobraDeChakra > 1000 || qtdClones > 50 && percentualSobraDeChakra >= 20) {
+                div_clones.innerHTML += fraseGanhandor;
+            }
+            else if (sobraDeChakra > 500 || qtdClones >= 20 && qtdClones <= 50 && percentualSobraDeChakra >= 10) {
+                div_clones.innerHTML += fraseIntermediario;
+            }
+            else {
+                div_clones.innerHTML += frasePerdedor;
+            }
+    }
+</script>
